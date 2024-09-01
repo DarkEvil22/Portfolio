@@ -202,7 +202,7 @@
                                     <h2>Commercials and Ads</h2>
                                 </div>
                             </a></div>
-                        <div id="photo-commercial" class="photoSelectionContainer"><a href="commercial.html" class="animation-moveUp">
+                        <div id="photo-commercial" class="photoSelectionContainer"><a href="Video%20Editing/Educational.html" class="animation-moveUp">
                                 <div class="photos">
                                     <div class="photoSingleSelection photoContainer photo_4x5 photoBorder photo3">
                                         <div class="pictureWrapper">
@@ -359,7 +359,7 @@
                                     <h2>Gaming Highlights</h2>
                                 </div>
                             </a></div>
-                        <div id="photo-vienna" class="photoSelectionContainer"><a href="vienna.html" class="animation-moveUp">
+                        <div id="photo-vienna" class="photoSelectionContainer"><a href="vienna.html" class="animation-moveUp" onclick="checkPassword(event)">
                                 <div class="photos">
                                     <div class="photoSingleSelection photoContainer photo_4x5 photoBorder photo3">
                                         <div class="pictureWrapper">
@@ -390,6 +390,24 @@
                                     <h2>Weddings</h2>
                                 </div>
                             </a></div>
+                        <script>
+function checkPassword(event) {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+    
+    // Password prompt
+    const password = prompt("Please enter the password:");
+    
+    // Check if password is correct
+    if (password === "Dodo22112001") {
+        // Redirect to the target page if password is correct
+        window.location.href = "vienna.html";
+    } else {
+        // Alert the user if the password is incorrect
+        alert("Incorrect password. Please try again.");
+    }
+}
+</script>
                     </div>
                     <div class="header-textContainer paddingLeftRight">
                         <h1 class="animation-textReveal">Cinematics</h1>
