@@ -21737,7 +21737,7 @@
                         var e = t,
                             n = document.getElementById("videoIntro");
                         if (e && n) {
-                            n.src || (window.innerWidth < 800 ? n.src = "assets/videos/intro_phone.mp4" : "probably" === n.canPlayType('video/webm; codecs="vp9"') ? n.src = "assets/videos/intro.webm" : n.src = "assets/videos/intro.mp4"), n.muted = !0, n.loop = !0, n.autoplay = !0, n.playsinline = !0;
+                            n.src || (window.innerWidth < 800 ? n.src = "assets/videos/Portfolio Trailer.mp4" : "probably" === n.canPlayType('video/mp4; codecs="H.264"') ? n.src = "assets/videos/Portfolio Trailer.mp4" : n.src = "assets/videos/Portfolio Trailer.mp4"), n.muted = !0, n.loop = !0, n.autoplay = !0, n.playsinline = !0;
                             var i = n.play();
                             void 0 !== i && i.then((function (t) {})).catch((function (t) {
                                 n.play()
@@ -21748,6 +21748,7 @@
                     }(o.videoLayer), fx(o, Mx, Rx).call(o, 0), o.renderer.setAnimationLoop(l)
             }))
         }
+            
 
         function Ix(t) {
             return Ix = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
