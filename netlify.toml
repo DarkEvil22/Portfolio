@@ -2,3 +2,11 @@
 package = "netlify-plugin-cloudinary"
 [plugins.inputs]
 cloudName = "${CLOUDINARY_CLOUD_NAME}"
+
+# netlify.toml
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"
