@@ -6,3 +6,4 @@ cloudName = "${CLOUDINARY_CLOUD_NAME}"
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
+  [plugins.inputs]
