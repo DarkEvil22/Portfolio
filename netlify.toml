@@ -6,10 +6,3 @@ cloudName = "${CLOUDINARY_CLOUD_NAME}"
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
-  [plugins.inputs]
-cloudName = "dajkmmsn5"
-  apiKey = "852584586866982"
-  apiSecret = "XQm8rR_D-pmZJfrmXWwaIfI0lL8"
-  quality = 75
-  formats = ["jpg", "png"]
-  cache = true
