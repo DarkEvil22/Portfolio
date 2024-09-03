@@ -28886,22 +28886,7 @@
                     }();
                     this.userID = t
                 }
-            }, {
-                key: "sendPageView",
-                value: function (t, e) {
-                    var n = document.querySelector(".analyticsSessionIDText"),
-                        i = document.querySelector(".analyticsUserIDText");
-                    n && (n.innerHTML = this.sessionID), i && (i.innerHTML = this.userID);
-                    var r = encodeURIComponent(window.location.href),
-                        s = encodeURIComponent(document.title),
-                        o = window.screen.width,
-                        a = window.screen.height,
-                        l = new FormData;
-                    l.append("url", r), l.append("title", s), l.append("session", this.sessionID), l.append("screen", o + "x" + a), l.append("referrer", this.userReferrer), l.append("language", this.userLanguage), l.append("clientid", this.userID);
-                    var c = new XMLHttpRequest;
-                    c.open("POST", "https://statistic.christiankremser.com/"), c.send(l), c.send()
-                }
-            }], n && yT(e.prototype, n), i && yT(e, i), Object.defineProperty(e, "prototype", {
+            }, ], n && yT(e.prototype, n), i && yT(e, i), Object.defineProperty(e, "prototype", {
                 writable: !1
             }), t
         }();
