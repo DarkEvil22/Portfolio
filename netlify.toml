@@ -3,3 +3,7 @@
 package = "netlify-plugin-cloudinary"
 [plugins.inputs]
 cloudName = "${CLOUDINARY_CLOUD_NAME}"
+[dev]
+command = "npm run dev"  # Replace this with the command to start your dev server
+port = 8888             # Ensure the port matches your dev server
+framework = "next"      # Replace with your framework if different
