@@ -28104,21 +28104,37 @@
                                     t.classList.toggle("secondPhoto")
                                 }
                                 t.addEventListener("click", e)
-                            })), Yi.utils.toArray(".openVideoPlayer").forEach((function (t) {
-                                function e() {
-                                    var e = t.dataset.src, // e.g., "hornbach_waw"
-                                        s = t.dataset.videoName, // e.g., "My 22th Birthday"
-                                        n = "/assets/videos/" + e + "/" + s + ".mp4", // Path to .mp4 file
-                                        o = "/assets/videos/" + e + "/"; // Base path
+                            })), Yi.utils.toArray(".openVideoPlayer").forEach(function (t) {
+    function e() {
+        // Get the video name and the source folder from the data attributes
+        var e = t.dataset.src, // e.g., "hornbach_waw"
+            s = t.dataset.videoName, // e.g., "My 22th Birthday"
+            n = "/assets/videos/" + e + "/" + s + ".mp4", // Path to the .mp4 file
+            o = "/assets/videos/" + e + "/"; // Base path
 
-                                    console.log("Video URL (mp4):", n);
-                                    console.log("Video path:", o);
+        // Log the video URL for debugging
+        console.log("Video URL (mp4):", n);
+        console.log("Video path:", o);
 
-                                    // Initialize the video player with the .mp4 file
-                                    (new Wx).init(n, null, null, s, o); // Pass null for .webm and .m3u8 if not available
-                                }
-                                t.addEventListener("click", e);
-                            })), Yi.utils.toArray(".photosWrapper").forEach((function (t) {
+        // Find the video element within the clicked project container
+        var videoElement = t.querySelector("video");
+
+        // Dynamically set the video source based on data attributes
+        var sourceElement = videoElement.querySelector("source");
+        sourceElement.src = n;
+
+        // Preload the video and start loading it
+        videoElement.load(); // Preload the video
+        videoElement.play(); // Start playing the video
+
+        // Optionally, handle any additional video player initialization here
+        // If using a player like `Wx`, initialize the player with this video URL:
+        (new Wx).init(n, null, null, s, o); // Adjust if using a custom player for video playback
+    }
+
+    // Add event listener for the play button
+    t.addEventListener("click", e);
+}); Yi.utils.toArray(".photosWrapper").forEach((function (t) {
                                 var e = Yi.timeline(),
                                     n = t,
                                     i = t.querySelector(".photo1"),
