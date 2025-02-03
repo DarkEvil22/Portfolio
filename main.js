@@ -28105,35 +28105,40 @@
                                 }
                                 t.addEventListener("click", e)
                             })), Yi.utils.toArray(".openVideoPlayer").forEach(function (t) {
-    function e() {
-        // Get the video name and the source folder from the data attributes
-        var e = t.dataset.src, // e.g., "hornbach_waw"
-            s = t.dataset.videoName, // e.g., "My 22th Birthday"
-            n = "/assets/videos/" + e + "/" + s + ".mp4", // Path to the .mp4 file
-            o = "/assets/videos/" + e + "/"; // Base path
+    t.addEventListener("click", function () {
+        // Get the embed URL from the data attribute
+        const embedUrl = t.dataset.embedUrl;
 
-        // Log the video URL for debugging
-        console.log("Video URL (mp4):", n);
-        console.log("Video path:", o);
+        // Create a modal container
+        const modal = document.createElement("div");
+        modal.classList.add("video-modal");
 
-        // Find the video element within the clicked project container
-        var videoElement = t.querySelector("video");
+        // Create the iframe for the embedded video
+        const iframe = document.createElement("iframe");
+        iframe.src = embedUrl;
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allow", "autoplay; fullscreen");
+        iframe.setAttribute("allowfullscreen", "");
 
-        // Dynamically set the video source based on data attributes
-        var sourceElement = videoElement.querySelector("source");
-        sourceElement.src = n;
+        // Append the iframe to the modal
+        modal.appendChild(iframe);
 
-        // Preload the video and start loading it
-        videoElement.load(); // Preload the video
-        videoElement.play(); // Start playing the video
+        // Add a close button to the modal
+        const closeButton = document.createElement("button");
+        closeButton.classList.add("close-button");
+        closeButton.innerHTML = "&times;"; // "×" symbol
+        closeButton.addEventListener("click", function () {
+            document.body.removeChild(modal);
+        });
 
-        // Optionally, handle any additional video player initialization here
-        // If using a player like `Wx`, initialize the player with this video URL:
-        (new Wx).init(n, null, null, s, o); // Adjust if using a custom player for video playback
-    }
+        modal.appendChild(closeButton);
 
-    // Add event listener for the play button
-    t.addEventListener("click", e);
+        // Append the modal to the body
+        document.body.appendChild(modal);
+
+        // Add a class to the body to prevent scrolling
+        document.body.classList.add("modal-open");
+    });
 }); Yi.utils.toArray(".photosWrapper").forEach((function (t) {
                                 var e = Yi.timeline(),
                                     n = t,

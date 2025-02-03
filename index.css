@@ -3082,7 +3082,47 @@ article h2 {
 .projectContainer:hover .projectVideoPreview {
     opacity: 1
 }
+/* Modal styles */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.video-modal iframe {
+    width: 90%;
+    height: 90%;
+    max-width: 1400px;
+    max-height: 800px;
+    border: none;
+}
+
+/* Close button styles */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Prevent scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
 @font-face {
     ascent-override: normal;
     ascent-override: 100%;
