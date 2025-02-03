@@ -28124,14 +28124,6 @@
             document.body.classList.remove("modal-open"); // Remove class
         });
 
-        // Close modal when clicking outside the iframe
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                document.body.removeChild(modal);
-                document.body.classList.remove("modal-open"); // Remove class
-            }
-        });
-
         modal.appendChild(iframe);
         modal.appendChild(closeButton);
         document.body.appendChild(modal);
