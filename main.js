@@ -28106,39 +28106,38 @@
                                 t.addEventListener("click", e)
                             })), Yi.utils.toArray(".openVideoPlayer").forEach(function (t) {
     t.addEventListener("click", function () {
-        // Get the embed URL from the data attribute
         const embedUrl = t.dataset.embedUrl;
-
-        // Create a modal container
         const modal = document.createElement("div");
         modal.classList.add("video-modal");
 
-        // Create the iframe for the embedded video
         const iframe = document.createElement("iframe");
         iframe.src = embedUrl;
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allow", "autoplay; fullscreen");
         iframe.setAttribute("allowfullscreen", "");
 
-        // Append the iframe to the modal
-        modal.appendChild(iframe);
-
-        // Add a close button to the modal
         const closeButton = document.createElement("button");
         closeButton.classList.add("close-button");
-        closeButton.innerHTML = "&times;"; // "×" symbol
+        closeButton.innerHTML = "&times;";
         closeButton.addEventListener("click", function () {
             document.body.removeChild(modal);
+            document.body.classList.remove("modal-open"); // Remove class
         });
 
+        // Close modal when clicking outside the iframe
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                document.body.removeChild(modal);
+                document.body.classList.remove("modal-open"); // Remove class
+            }
+        });
+
+        modal.appendChild(iframe);
         modal.appendChild(closeButton);
-
-        // Append the modal to the body
         document.body.appendChild(modal);
-
-        // Add a class to the body to prevent scrolling
-        document.body.classList.add("modal-open");
+        document.body.classList.add("modal-open"); // Add class
     });
+});
 }); Yi.utils.toArray(".photosWrapper").forEach((function (t) {
                                 var e = Yi.timeline(),
                                     n = t,
