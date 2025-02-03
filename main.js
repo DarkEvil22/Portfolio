@@ -28137,7 +28137,6 @@
         document.body.appendChild(modal);
         document.body.classList.add("modal-open"); // Add class
     });
-});
 }); Yi.utils.toArray(".photosWrapper").forEach((function (t) {
                                 var e = Yi.timeline(),
                                     n = t,
