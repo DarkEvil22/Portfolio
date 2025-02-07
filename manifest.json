@@ -3,10 +3,10 @@
     "background_color": "#f0f7ff",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "https://www.christiankremser.com",
-    "name": "Christian Kremser",
-    "short_name": "Christian Kremser",
-    "description": "Content Creator from Vienna, Austria",
+    "start_url": "https://mahmoudmostafa.net/",
+    "name": "Mahmoud Mostafa",
+    "short_name": "Mahmoud Mostafa",
+    "description": "Content Creator from Egypt, Video Editor",
     "icons": [
         {
             "src": "/icon-192x192.png",
