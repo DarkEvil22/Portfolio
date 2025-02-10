@@ -703,10 +703,25 @@
                     <div id="test-sequence"></div>
                 </section><video id="videoIntro" muted playsinline loop autoplay></video>
                 <script>
-                    const video = document.getElementById("videoIntro");
-                    window.innerWidth < 800 ? video.src = "assets/videos/Portfolio Trailer.mp4" : "probably" === video.canPlayType('video/mp4; codecs="H.264"') ? video.src = "assets/videos/Portfolio Trailer.mp4" : video.src = "assets/videos/Portfolio Trailer.mp4"
+  const video = document.getElementById("videoIntro");
 
-                </script>
+  if (video) {
+    // Define the video source (same for mobile and desktop)
+    const videoSrc = "assets/videos/Portfolio Trailer.mp4";
+
+    // Check if the browser supports the video format
+    const isVideoSupported = video.canPlayType('video/mp4; codecs="H.264"') === "probably";
+
+    // Set the video source based on screen width and browser support
+    if (window.innerWidth < 800) {
+      // For mobile devices (screen width < 800px)
+      video.src = videoSrc;
+    } else if (isVideoSupported) {
+      // For desktop devices (screen width >= 800px) and supported browsers
+      video.src = videoSrc;
+    }
+  } // <-- Added this closing brace
+</script>
                 <footer id="s-footer">
                     <div class="s-container-full">
                         <div class="footer-name-wrapper">
