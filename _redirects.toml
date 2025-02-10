@@ -1,2 +1,0 @@
-# Redirect all traffic from my Netlify subdomain to my primary domain:
-https://mahmoudmostafa.netlify.app/*   https://mahmoudmostafa.net/:splat   301!
