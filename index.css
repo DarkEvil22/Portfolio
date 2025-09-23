@@ -3137,14 +3137,9 @@ body.modal-open {
 }
 
 @font-face {
-    ascent-override: normal;
-    ascent-override: 100%;
-    font-display: swap;
-    font-family: UniviaProBook;
-    font-style: normal;
-    font-weight: 400;
-    src: url(/assets/fonts/univia-pro/UniviaPro-Book.eot);
-    src: local("Univia Pro Book"), local("UniviaPro-Book"), url(/assets/fonts/univia-pro/UniviaPro-Book.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/univia-pro/UniviaPro-Book.woff2) format("woff2"), url(/assets/fonts/univia-pro/UniviaPro-Book.woff) format("woff"), url(/assets/fonts/univia-pro/UniviaPro-Book.ttf) format("truetype")
+    font-family: "univia-pro", sans-serif;
+font-weight: 400;
+font-style: normal;
 }
 
 :root {
